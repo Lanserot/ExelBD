@@ -25,6 +25,7 @@ if (isset($_FILES['file'])) {
         $_FILES['file']['name'] = time() . "_xlsx";
         $exelPars = new ExelParser($xlsx->rows(), $_FILES['file']['name']);
         $exelPars->start();
+        echo 'Создана таблица ' . $_FILES['file']['name'] . ' в неё внесены данные.';
     } else {
         echo SimpleXLSX::parseError();
     }
